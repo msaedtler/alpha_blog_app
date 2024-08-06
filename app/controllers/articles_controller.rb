@@ -7,6 +7,14 @@ class ArticlesController < ApplicationController
   def index
     @articles = Article.all
   end
+
+  def new
+
+  end
+
+  def create
+    render plain: params[:article]
+  end
 #  before_action :set_article, only: %i[ show edit update destroy ]
 #
 #  # GET /articles or /articles.json
