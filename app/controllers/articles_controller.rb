@@ -9,12 +9,50 @@ class ArticlesController < ApplicationController
   end
 
   def new
+      @article = Article.new
+  end
 
+  def edit
+    # byebug
+    @article = Article.find(params[:id])
   end
 
   def create
-    render plain: params[:article]
+    # render plain: params[:article]
+    @article = Article.new(params.require(:article).permit(:title, :description))
+    # render plain: @article.inspect
+    if @article.save
+      flash[:notice] = "Article was created seccessfully."
+      # redirect_to article_path(@article)
+      redirect_to @article # easy way
+    else
+      render 'new'
+    end
   end
+
+  def update
+    # byebug
+    @article = Article.find(params[:id])
+    if @article.update(params.require(:article).permit(:title, :description))
+      flash[:notice] = "Article was updated seccessfully."
+      redirect_to @article
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
+    redirect_to articles_path
+  end
+
+
+
+
+
+
+
 #  before_action :set_article, only: %i[ show edit update destroy ]
 #
 #  # GET /articles or /articles.json
