@@ -1,0 +1,59 @@
+@import 'bootstrap/dist/css/bootstrap';
+
+.navbar {
+  background-color: rgb(215, 246, 223) !important;
+}
+
+.nav-link {
+  color: #023200 !important;
+}
+
+#logo {
+  float: left;
+  font-size: 1.7em;
+  color: #023200;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+#home-container {
+  /* margin-top: 25px; */
+}
+   
+.navbar-brand {
+  font-size: 3rem;
+}
+
+.home-block {
+  /* background-color: #79cf78 !important; */
+  background-image: asset-url('green_background.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 20em;
+  padding-top: 5%;
+  /* color: white; */
+}
+
+#sticky-footer {
+  /* margin-top: 25px; */
+}
+
+/* Sticky Footer Classes */
+
+html,
+body {
+  height: 99%;
+}
+
+#page-content {
+  flex: 1 0 auto;
+  background-color: rgb(224, 255, 231);
+}
+
+/* Other Classes for Page Styling */
+body {
+  /* background: #007bff; */
+  /* background: linear-gradient(to right, #0062E6, #33AEFF); */
+}
